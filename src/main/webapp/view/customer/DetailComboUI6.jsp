@@ -14,6 +14,7 @@ List<ComboDetail6> details = dao.getDetail(id);
   <div class="pic"><img src="<%=Fmt.img(request.getContextPath(), c.getImage())%>" alt="<%=Fmt.esc(c.getName())%>"></div>
   <div class="info">
     <p><b>Tên combo:</b> <%=Fmt.esc(c.getName())%></p>
+    <p><b>Mô tả:</b> <%=Fmt.esc(c.getDescription())%></p>
     <p><b>Danh sách món ăn:</b></p>
     <table><tr><th>Tên</th><th>Số lượng</th><th>Đơn giá</th></tr>
     <% for (ComboDetail6 d : details) { %>

@@ -19,6 +19,7 @@ public class ComboDAO6 extends DAO6 {
         c.setSalePrice(rs.getBigDecimal("salePrice"));
         c.setDuration(rs.getString("duration"));
         c.setImage(rs.getString("image"));
+        c.setDescription(rs.getString("description"));
         return c;
     }
 

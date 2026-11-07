@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class Combo6 {
     private int id;
-    private String name, duration, image;
+    private String name, duration, image, description;
     private BigDecimal sellingPrice, salePrice;
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
@@ -18,4 +18,6 @@ public class Combo6 {
     public void setDuration(String duration) { this.duration = duration; }
     public String getImage() { return image; }
     public void setImage(String image) { this.image = image; }
+    public void setDescription(String description) { this.description = description; }
+    public String getDescription() { return description; }
 }

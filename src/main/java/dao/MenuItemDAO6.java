@@ -4,15 +4,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import model.Category6;
 import model.MenuItem6;
 
 public class MenuItemDAO6 extends DAO6 {
     public MenuItemDAO6() { super(); }
 
     private static final String SELECT =
-        "SELECT m.id, m.name, m.price, m.image, m.description, c.id AS cid, c.name AS cname, c.status AS cstatus "
-      + "FROM tblMenuItem m LEFT JOIN tblCatergory c ON m.tblCatergoryId = c.id ";
+        "SELECT m.id, m.name, m.price, m.image, m.description "
+      + "FROM tblMenuItem m ";
 
     private MenuItem6 map(ResultSet rs) throws Exception {
         MenuItem6 m = new MenuItem6();
@@ -21,11 +20,6 @@ public class MenuItemDAO6 extends DAO6 {
         m.setPrice(rs.getBigDecimal("price"));
         m.setImage(rs.getString("image"));
         m.setDescription(rs.getString("description"));
-        Category6 c = new Category6();
-        c.setId(rs.getInt("cid"));
-        c.setName(rs.getString("cname"));
-        c.setStatus(rs.getString("cstatus"));
-        m.setCategory(c);
         return m;
     }
 

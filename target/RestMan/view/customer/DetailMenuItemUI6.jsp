@@ -12,7 +12,6 @@ MenuItem6 m = new MenuItemDAO6().getDetail(id);
   <div class="pic"><img src="<%=Fmt.img(request.getContextPath(), m.getImage())%>" alt="<%=Fmt.esc(m.getName())%>"></div>
   <div class="info">
     <p><b>Tên món:</b> <%=Fmt.esc(m.getName())%></p>
-    <p><b>Loại:</b> <%=Fmt.esc(m.getCategory()==null?"":m.getCategory().getName())%></p>
     <p><b>Mô tả:</b> <%=Fmt.esc(m.getDescription())%></p>
     <p><b>Giá bán:</b> <span style="color:#c8202f;font-weight:bold"><%=Fmt.money(m.getPrice())%></span></p>
   </div>

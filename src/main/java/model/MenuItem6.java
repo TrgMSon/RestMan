@@ -6,7 +6,6 @@ public class MenuItem6 {
     private int id;
     private String name, image, description;
     private BigDecimal price;
-    private Category6 category;
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
     public String getName() { return name; }
@@ -17,6 +16,4 @@ public class MenuItem6 {
     public void setImage(String image) { this.image = image; }
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
-    public Category6 getCategory() { return category; }
-    public void setCategory(Category6 category) { this.category = category; }
 }

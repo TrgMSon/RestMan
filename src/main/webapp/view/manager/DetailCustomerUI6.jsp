@@ -23,7 +23,7 @@ java.math.BigDecimal total = java.math.BigDecimal.ZERO;
 <% Manager6 _mgr = (Manager6) session.getAttribute("manager"); %>
 <div class="user-info">
   <div class="name">&#128100; <%=Fmt.esc(_mgr.getFullName())%></div>
-  <div class="meta">Nhân viên quản lý &middot; <%=Fmt.esc(_mgr.getUserName())%></div>
+  <div class="meta">Nhân viên quản lý &middot;</div>
   <a href="<%=request.getContextPath()%>/view/manager/LogoutUI6.jsp">Đăng xuất</a>
 </div>
 <h2>Các hóa đơn của khách hàng</h2>

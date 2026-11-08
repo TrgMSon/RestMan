@@ -17,7 +17,7 @@ List<Detail6> items = new DetailDAO6().getDetail(id);
 <% Manager6 _mgr = (Manager6) session.getAttribute("manager"); %>
 <div class="user-info">
   <div class="name">&#128100; <%=Fmt.esc(_mgr.getFullName())%></div>
-  <div class="meta">Nhân viên quản lý &middot; <%=Fmt.esc(_mgr.getUserName())%></div>
+  <div class="meta">Nhân viên quản lý &middot;</div>
   <a href="<%=request.getContextPath()%>/view/manager/LogoutUI6.jsp">Đăng xuất</a>
 </div>
 <h2>Thông tin chi tiết hóa đơn</h2>

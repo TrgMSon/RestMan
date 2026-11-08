@@ -35,15 +35,4 @@ public class MenuItemDAO6 extends DAO6 {
         } catch (Exception e) { e.printStackTrace(); }
         return list;
     }
-
-    /** Lấy chi tiết 1 món ăn. */
-    public MenuItem6 getDetail(int idMenuItem) {
-        try (PreparedStatement ps = conn.prepareStatement(SELECT + "WHERE m.id = ?")) {
-            ps.setInt(1, idMenuItem);
-            try (ResultSet rs = ps.executeQuery()) {
-                if (rs.next()) return map(rs);
-            }
-        } catch (Exception e) { e.printStackTrace(); }
-        return null;
-    }
 }

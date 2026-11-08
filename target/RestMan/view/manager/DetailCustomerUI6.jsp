@@ -1,5 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*,java.time.*,model.*,dao.*,util.Fmt" %>
-<%@ include file="auth.jspf" %>
+<%
+// Chưa đăng nhập -> chuyển về trang đăng nhập
+if (session.getAttribute("manager") == null) {
+    response.sendRedirect(request.getContextPath() + "/view/manager/LoginUI6.jsp");
+    return;
+}
+%>
 <%
 int id = 0;
 try { id = Integer.parseInt(request.getParameter("id")); } catch (Exception ex) {}
@@ -14,6 +20,12 @@ java.math.BigDecimal total = java.math.BigDecimal.ZERO;
 %>
 <!DOCTYPE html><html><head><meta charset="UTF-8"><title>Các hóa đơn của khách hàng</title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css"></head><body>
+<% Manager6 _mgr = (Manager6) session.getAttribute("manager"); %>
+<div class="user-info">
+  <div class="name">&#128100; <%=Fmt.esc(_mgr.getFullName())%></div>
+  <div class="meta">Nhân viên quản lý &middot; <%=Fmt.esc(_mgr.getUserName())%></div>
+  <a href="<%=request.getContextPath()%>/view/manager/LogoutUI6.jsp">Đăng xuất</a>
+</div>
 <h2>Các hóa đơn của khách hàng</h2>
 <p>Ngày bắt đầu: <b><%=Fmt.esc(s)%></b> &nbsp; Ngày kết thúc: <b><%=Fmt.esc(e)%></b></p>
 <p>Tên khách hàng: <b><%=c==null?"":Fmt.esc(c.getFullName())%></b></p>

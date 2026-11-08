@@ -15,7 +15,6 @@ public class ComboDAO6 extends DAO6 {
         Combo6 c = new Combo6();
         c.setId(rs.getInt("id"));
         c.setName(rs.getString("name"));
-        c.setSellingPrice(rs.getBigDecimal("sellingPrice"));
         c.setSalePrice(rs.getBigDecimal("salePrice"));
         c.setDuration(rs.getString("duration"));
         c.setImage(rs.getString("image"));
@@ -36,21 +35,11 @@ public class ComboDAO6 extends DAO6 {
         return list;
     }
 
-    /** Thông tin chung của combo (bổ sung để hiển thị cả khi combo chưa có món). */
-    public Combo6 getCombo(int idCombo) {
-        try (PreparedStatement ps = conn.prepareStatement("SELECT * FROM tblCombo WHERE id = ?")) {
-            ps.setInt(1, idCombo);
-            try (ResultSet rs = ps.executeQuery()) {
-                if (rs.next()) return map(rs);
-            }
-        } catch (Exception e) { e.printStackTrace(); }
-        return null;
-    }
-
     /** Danh sách món (kèm số lượng) trong combo. */
     public List<ComboDetail6> getDetail(int idCombo) {
         List<ComboDetail6> list = new ArrayList<>();
-        Combo6 combo = getCombo(idCombo);
+        Combo6 combo = new Combo6();          // chỉ cần id; các thông tin khác đã có ở trang chi tiết
+        combo.setId(idCombo);
         String sql = "SELECT cd.quantity, m.id, m.name, m.price "
                    + "FROM tblComboDetail cd JOIN tblMenuItem m ON cd.tblMenuItemId = m.id "
                    + "WHERE cd.tblComboId = ?";

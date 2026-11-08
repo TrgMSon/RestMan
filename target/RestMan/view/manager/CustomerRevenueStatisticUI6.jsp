@@ -1,5 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*,java.time.*,model.*,dao.*,util.Fmt" %>
-<%@ include file="auth.jspf" %>
+<%
+// Chưa đăng nhập -> chuyển về trang đăng nhập
+if (session.getAttribute("manager") == null) {
+    response.sendRedirect(request.getContextPath() + "/view/manager/LoginUI6.jsp");
+    return;
+}
+%>
 <%
 String s = request.getParameter("startDate"), e = request.getParameter("endDate");
 List<StatisticsCustomerRevenue6> stats = null;
@@ -15,6 +21,12 @@ if (s != null && e != null && !s.isEmpty() && !e.isEmpty()) {
 %>
 <!DOCTYPE html><html><head><meta charset="UTF-8"><title>Thống kê khách hàng theo doanh thu</title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css"></head><body>
+<% Manager6 _mgr = (Manager6) session.getAttribute("manager"); %>
+<div class="user-info">
+  <div class="name">&#128100; <%=Fmt.esc(_mgr.getFullName())%></div>
+  <div class="meta">Nhân viên quản lý &middot; <%=Fmt.esc(_mgr.getUserName())%></div>
+  <a href="<%=request.getContextPath()%>/view/manager/LogoutUI6.jsp">Đăng xuất</a>
+</div>
 <h2>Thống kê khách hàng theo doanh thu</h2>
 <form method="get" action="CustomerRevenueStatisticUI6.jsp">
   Ngày bắt đầu: <input type="date" name="startDate" value="<%=Fmt.esc(s)%>" required>

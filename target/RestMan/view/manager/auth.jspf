@@ -1,7 +1,0 @@
-<%-- Bộ lọc đăng nhập: include ngay sau dòng page directive của mọi trang quản lý --%>
-<%
-if (session.getAttribute("manager") == null) {
-    response.sendRedirect(request.getContextPath() + "/view/manager/LoginUI6.jsp");
-    return;
-}
-%>

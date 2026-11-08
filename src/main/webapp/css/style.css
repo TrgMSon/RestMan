@@ -9,8 +9,9 @@ a.btn{border:1px solid #888;text-decoration:none;color:#000;background:#eee;disp
 .r{text-align:right}
 
 /* ----- Lưới món ăn / combo (kiểu Jollibee) ----- */
-.grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px dashed #f9b91c;border-left:1px dashed #f9b91c;margin:14px 0}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px dashed #f9b91c;border-left:1px dashed #f9b91c;margin:14px 0}
 .card{display:block;text-decoration:none;color:inherit;padding:22px 24px 20px;text-align:center;
+      min-width:0; overflow:hidden;
       border-right:1px dashed #f9b91c;border-bottom:1px dashed #f9b91c;background:#fff}
 .card:hover{background:#fff8e6}
 .card img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#eee}

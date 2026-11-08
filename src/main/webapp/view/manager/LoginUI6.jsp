@@ -28,5 +28,4 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
   <p>Mật khẩu: <input type="password" name="password" required></p>
   <button type="submit">Đăng nhập</button>
 </form>
-<p><a class="btn" href="<%=request.getContextPath()%>/index.jsp">Về trang chủ</a></p>
 </body></html>

@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
-<rect width="600" height="600" fill="#c8202f"/>
-<g opacity=".10" fill="#fff"><rect x="30" y="0" width="150" height="360"/><rect x="225" y="0" width="150" height="360"/><rect x="420" y="0" width="150" height="360"/></g>
-<polygon points="0,380 600,310 600,600 0,600" fill="#f0c48e"/>
-<polygon points="30,420 570,350 600,420 70,540" fill="#46bfd0"/>
-<polygon points="30,420 570,350 570,358 30,430" fill="#f9d23c"/>
-<ellipse cx="300" cy="470" rx="170" ry="27" fill="#000" opacity=".18"/><g transform="translate(300,335) scale(1.8)"><path d="M-60 -6 L60 -6 L44 96 Q42 108 30 108 L-30 108 Q-42 108 -44 96Z" fill="#e8f6fb" stroke="#c5dde6" stroke-width="3"/><path d="M-64 -8 Q-64 -84 0 -84 Q64 -84 64 -8Z" fill="#fff3d6" stroke="#ecd9aa" stroke-width="3"/><path d="M-52 -40 Q-40 -20 -30 -42 Q-14 -10 0 -44 Q14 -14 28 -42 Q42 -20 52 -40 Q50 -70 0 -76 Q-50 -70 -52 -40Z" fill="#5a2d17"/><circle cx="0" cy="-94" r="14" fill="#c8202f"/><line x1="0" y1="-108" x2="10" y2="-130" stroke="#3b7a2a" stroke-width="4"/></g>
-</svg>

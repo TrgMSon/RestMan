@@ -4,6 +4,17 @@
 # Log file
 *.log
 
+# Maven build output
+target/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
 # BlueJ files
 *.ctxt
 

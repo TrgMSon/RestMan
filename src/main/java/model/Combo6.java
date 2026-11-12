@@ -5,13 +5,13 @@ import java.math.BigDecimal;
 public class Combo6 {
     private int id;
     private String name, duration, image, description;
-    private BigDecimal salePrice;
+    private BigDecimal price;
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
-    public BigDecimal getSalePrice() { return salePrice; }
-    public void setSalePrice(BigDecimal v) { this.salePrice = v; }
+    public BigDecimal getPrice() { return price; }
+    public void setPrice(BigDecimal v) { this.price = v; }
     public String getDuration() { return duration; }
     public void setDuration(String duration) { this.duration = duration; }
     public String getImage() { return image; }

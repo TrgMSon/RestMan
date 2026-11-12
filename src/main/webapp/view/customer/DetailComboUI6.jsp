@@ -26,7 +26,7 @@ List<ComboDetail6> details = (c == null) ? new ArrayList<ComboDetail6>() : new C
       <tr><td><%=Fmt.esc(d.getMenuItem().getName())%></td><td><%=d.getQuantity()%></td>
           <td class="r"><%=Fmt.money(d.getMenuItem().getPrice())%></td></tr>
     <% } %></table>
-    <p><b>Giá bán:</b> <span style="color:#c8202f;font-weight:bold"><%=Fmt.money(c.getSalePrice())%></span></p>
+    <p><b>Giá bán:</b> <span style="color:#c8202f;font-weight:bold"><%=Fmt.money(c.getPrice())%></span></p>
     <p><b>Thời gian áp dụng:</b> <%=Fmt.esc(c.getDuration())%></p>
   </div>
 </div>

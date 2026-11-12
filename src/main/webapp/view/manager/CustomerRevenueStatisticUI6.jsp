@@ -13,8 +13,11 @@ java.math.BigDecimal total = java.math.BigDecimal.ZERO;
 String error = null;
 if (s != null && e != null && !s.isEmpty() && !e.isEmpty()) {
     try {
+        LocalDate today = LocalDate.now(ZoneId.of("Asia/Ho_Chi_Minh"));
         LocalDate sd = LocalDate.parse(s), ed = LocalDate.parse(e);
         if (ed.isBefore(sd)) error = "Ngày kết thúc phải sau hoặc bằng ngày bắt đầu.";
+        else if (sd.isAfter(today)) error = "Ngày bắt đầu không được ở tương lai.";
+        else if (ed.isAfter(today)) error = "Ngày kết thúc không được ở tương lai.";
         else stats = new CustomerRevenueDAO6().getStatisticRevenueCustomer(sd.atStartOfDay(), ed.plusDays(1).atStartOfDay());
     } catch (Exception ex) { error = "Ngày không hợp lệ."; }
 }

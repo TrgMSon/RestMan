@@ -15,7 +15,7 @@ public class ComboDAO6 extends DAO6 {
         Combo6 c = new Combo6();
         c.setId(rs.getInt("id"));
         c.setName(rs.getString("name"));
-        c.setSalePrice(rs.getBigDecimal("salePrice"));
+        c.setPrice(rs.getBigDecimal("price"));
         c.setDuration(rs.getString("duration"));
         c.setImage(rs.getString("image"));
         c.setDescription(rs.getString("description"));

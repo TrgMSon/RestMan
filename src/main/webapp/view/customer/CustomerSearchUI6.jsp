@@ -43,7 +43,7 @@ if (keyword != null) {
     <img src="<%=Fmt.img(ctx, c.getImage())%>" alt="<%=Fmt.esc(c.getName())%>">
     <div class="title"><%=Fmt.esc(c.getName())%></div>
     <div class="sub"><%=Fmt.esc(c.getDescription())%></div>
-    <div class="price"><%=Fmt.money(c.getSalePrice())%></div>
+    <div class="price"><%=Fmt.money(c.getPrice())%></div>
   </a>
 <% } %>
 </div>

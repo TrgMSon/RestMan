@@ -8,12 +8,12 @@ if (session.getAttribute("manager") == null) {
 %>
 <%
 String s = request.getParameter("startDate"), e = request.getParameter("endDate");
+LocalDate today = LocalDate.now(ZoneId.of("Asia/Ho_Chi_Minh"));
 List<StatisticsCustomerRevenue6> stats = null;
 java.math.BigDecimal total = java.math.BigDecimal.ZERO;
 String error = null;
 if (s != null && e != null && !s.isEmpty() && !e.isEmpty()) {
     try {
-        LocalDate today = LocalDate.now(ZoneId.of("Asia/Ho_Chi_Minh"));
         LocalDate sd = LocalDate.parse(s), ed = LocalDate.parse(e);
         if (ed.isBefore(sd)) error = "Ngày kết thúc phải sau hoặc bằng ngày bắt đầu.";
         else if (sd.isAfter(today)) error = "Ngày bắt đầu không được ở tương lai.";
@@ -32,8 +32,8 @@ if (s != null && e != null && !s.isEmpty() && !e.isEmpty()) {
 </div>
 <h2>Thống kê khách hàng theo doanh thu</h2>
 <form method="get" action="CustomerRevenueStatisticUI6.jsp">
-  Ngày bắt đầu: <input type="date" name="startDate" value="<%=Fmt.esc(s)%>" required>
-  Ngày kết thúc: <input type="date" name="endDate" value="<%=Fmt.esc(e)%>" required>
+  Ngày bắt đầu: <input type="date" name="startDate" value="<%=Fmt.esc(s)%>" max="<%=today%>" required>
+  Ngày kết thúc: <input type="date" name="endDate" value="<%=Fmt.esc(e)%>" max="<%=today%>" required>
   <button type="submit">Xem thống kê</button>
 </form>
 <% if (error != null) { %><p style="color:red"><%=error%></p><% } %>

@@ -39,3 +39,7 @@ a.btn{border:1px solid #888;text-decoration:none;color:#000;background:#eee;disp
 .user-info .meta{color:#666}
 .user-info a{color:#c8202f;text-decoration:none}
 .user-info a:hover{text-decoration:underline}
+
+.login-row { border: none; }
+.login-row th { background-color: white; border: none; }
+.login-row tr { border: none; }

@@ -24,8 +24,24 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
 <h2>Đăng nhập nhân viên quản lý</h2>
 <% if (error != null) { %><p style="color:red"><%=error%></p><% } %>
 <form method="post" action="LoginUI6.jsp">
-  <p>Tên đăng nhập: <input type="text" name="userName" value="<%=Fmt.esc(userName)%>" required autofocus></p>
-  <p>Mật khẩu: <input type="password" name="password" required></p>
+  <table class="login-row">
+    <tr>
+        <th>
+            <p>Tên đăng nhập</p>
+        </th>
+        <th>
+            <input type="text" name="userName" value="<%=Fmt.esc(userName)%>" required autofocus>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <p>Mật khẩu</p>
+        </th>
+        <th>
+            <input type="password" name="password" required>
+        </th>
+    </tr>
+  </table>
   <button type="submit">Đăng nhập</button>
 </form>
 </body></html>

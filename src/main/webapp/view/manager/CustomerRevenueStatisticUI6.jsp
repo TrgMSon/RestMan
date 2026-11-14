@@ -38,7 +38,7 @@ if (s != null && e != null && !s.isEmpty() && !e.isEmpty()) {
 </form>
 <% if (error != null) { %><p style="color:red"><%=error%></p><% } %>
 <% if (stats != null) { %>
-<table><tr><th>STT</th><th>Mã khách hàng</th><th>Tên khách hàng</th><th>Doanh thu</th></tr>
+<table><tr><th>STT</th><th>Mã khách hàng</th><th>Tên khách hàng</th><th>Doanh thu (đ)</th></tr>
 <% int i = 1; for (StatisticsCustomerRevenue6 r : stats) { total = total.add(r.getIncome()); %>
  <tr><td><%=i++%></td>
      <td><a href="DetailCustomerUI6.jsp?id=<%=r.getId()%>&startDate=<%=s%>&endDate=<%=e%>"><%=r.getId()%></a></td>

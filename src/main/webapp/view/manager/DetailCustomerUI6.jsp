@@ -27,9 +27,9 @@ java.math.BigDecimal total = java.math.BigDecimal.ZERO;
   <a href="<%=request.getContextPath()%>/view/manager/LogoutUI6.jsp">Đăng xuất</a>
 </div>
 <h2>Các hóa đơn của khách hàng</h2>
-<p>Ngày bắt đầu: <b><%=Fmt.esc(s)%></b> &nbsp; Ngày kết thúc: <b><%=Fmt.esc(e)%></b></p>
+<p>Ngày bắt đầu: <b><%=Fmt.formatDate(s)%></b> &nbsp; Ngày kết thúc: <b><%=Fmt.formatDate(e)%></b></p>
 <p>Tên khách hàng: <b><%=c==null?"":Fmt.esc(c.getFullName())%></b></p>
-<table><tr><th>STT</th><th>Mã hóa đơn</th><th>Tổng tiền</th><th>Thời điểm thanh toán</th></tr>
+<table><tr><th>STT</th><th>Mã hóa đơn</th><th>Tổng tiền (đ)</th><th>Thời điểm thanh toán</th></tr>
 <% int i = 1; for (Invoice6 inv : invoices) { total = total.add(inv.getTotalAmount()); %>
  <tr><td><%=i++%></td>
      <td><a href="DetailInvoiceUI6.jsp?id=<%=inv.getId()%>"><%=inv.getId()%></a></td>

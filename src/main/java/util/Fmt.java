@@ -2,6 +2,7 @@ package util;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -13,10 +14,22 @@ public class Fmt {
                 .replace(">", "&gt;").replace("\"", "&quot;");
     }
     public static String money(BigDecimal v) {
-        return v == null ? "0" : new DecimalFormat("#,##0").format(v) + " đ";
+        return v == null ? "0" : new DecimalFormat("#,##0").format(v);
     }
     public static String dt(LocalDateTime t) {
         return t == null ? "" : t.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
+    }
+
+    public static String formatDate(String dateStr) {
+        if (dateStr == null || dateStr.isEmpty()) return "";
+        try {
+            // Giả sử dateStr từ DB hoặc input có dạng "yyyy-MM-dd"
+            LocalDate date = LocalDate.parse(dateStr);
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            return date.format(formatter);
+        } catch (Exception e) {
+            return dateStr; // Trả về nguyên bản nếu không parse được
+        }
     }
 
     /** URL của ảnh được phục vụ bởi ImageServlet (rỗng -> ảnh mặc định). */

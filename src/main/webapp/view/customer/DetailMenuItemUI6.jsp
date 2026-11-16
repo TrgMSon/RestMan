@@ -19,7 +19,7 @@ if (results != null) {
   <div class="info">
     <p><b>Tên món:</b> <%=Fmt.esc(m.getName())%></p>
     <p><b>Mô tả:</b> <%=Fmt.esc(m.getDescription())%></p>
-    <p><b>Giá bán:</b> <span style="color:#c8202f;font-weight:bold"><%=Fmt.money(m.getPrice())%></span></p>
+    <p><b>Giá bán:</b> <span style="color:#c8202f;font-weight:bold"><%=Fmt.money(m.getPrice()) + " đ"%></span></p>
   </div>
 </div>
 <% } %>

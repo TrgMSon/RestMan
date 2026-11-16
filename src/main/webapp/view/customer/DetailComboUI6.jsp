@@ -21,12 +21,12 @@ List<ComboDetail6> details = (c == null) ? new ArrayList<ComboDetail6>() : new C
     <p><b>Tên combo:</b> <%=Fmt.esc(c.getName())%></p>
     <p><b>Mô tả:</b> <%=Fmt.esc(c.getDescription())%></p>
     <p><b>Danh sách món ăn:</b></p>
-    <table><tr><th>Tên</th><th>Số lượng</th><th>Đơn giá</th></tr>
+    <table><tr><th>Tên</th><th>Số lượng</th><th>Đơn giá (đ)</th></tr>
     <% for (ComboDetail6 d : details) { %>
       <tr><td><%=Fmt.esc(d.getMenuItem().getName())%></td><td><%=d.getQuantity()%></td>
           <td class="r"><%=Fmt.money(d.getMenuItem().getPrice())%></td></tr>
     <% } %></table>
-    <p><b>Giá bán:</b> <span style="color:#c8202f;font-weight:bold"><%=Fmt.money(c.getPrice())%></span></p>
+    <p><b>Giá bán:</b> <span style="color:#c8202f;font-weight:bold"><%=Fmt.money(c.getPrice()) + " đ"%></span></p>
     <p><b>Thời gian áp dụng:</b> <%=Fmt.esc(c.getDuration())%></p>
   </div>
 </div>

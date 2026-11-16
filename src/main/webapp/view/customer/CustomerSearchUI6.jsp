@@ -29,7 +29,7 @@ if (keyword != null) {
     <img src="<%=Fmt.img(ctx, m.getImage())%>" alt="<%=Fmt.esc(m.getName())%>">
     <div class="title"><%=Fmt.esc(m.getName())%></div>
     <div class="sub"><%=Fmt.esc(m.getDescription())%></div>
-    <div class="price"><%=Fmt.money(m.getPrice())%></div>
+    <div class="price"><%=Fmt.money(m.getPrice()) + " đ"%></div>
   </a>
 <% } %>
 </div>
@@ -43,7 +43,7 @@ if (keyword != null) {
     <img src="<%=Fmt.img(ctx, c.getImage())%>" alt="<%=Fmt.esc(c.getName())%>">
     <div class="title"><%=Fmt.esc(c.getName())%></div>
     <div class="sub"><%=Fmt.esc(c.getDescription())%></div>
-    <div class="price"><%=Fmt.money(c.getPrice())%></div>
+    <div class="price"><%=Fmt.money(c.getPrice()) + " đ"%></div>
   </a>
 <% } %>
 </div>
